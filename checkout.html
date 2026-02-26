@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design/checkout.css">
+    <script src="script.js" defer></script>
+    <title>organic - Checkout</title>
+    <link rel="icon" type="image/png" href="Images/organ.png">
+    <style>
+        #orderSuccess { display: none; color: green; margin-top: 10px; }
+    </style>
+    <script>
+        // Check if user is logged in on checkout page load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!isLoggedIn()) {
+                showCheckoutLoginModal();
+            }
+        });
+    </script>
+</head>
+<body>
+<main>
+    <header>
+        <div class="left-section">
+            <img src="Images/organ.png" class="logo">
+            <span class="brand">organic</span>
+        </div>
+    </header>
+    <div class="checkout-layout">
+
+        <div class="left-side">
+            
+            <article>
+
+                <p class="p1">Checkout</p>
+
+                <form id="checkoutForm">
+                    <div class="form-section">
+
+                        <p class="p2">Delivery Information</p>
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <p id="name"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <p id="email"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <p id="number"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Delivery Address</label>
+                            <p id="address"></p>
+                        </div>
+
+                    </div>
+                </form>
+            </article>
+            <article>
+                <div class="payment">
+                    <div class="payment-form">
+
+                        <h2 class="p2">Payment Method</h2>
+
+                        <p class="p3">Select your preferred payment method</p>
+
+                        <div class="cod">
+                            <input type="radio" name="payment" value="cod" checked>
+                            <div class="codImg">
+                                <img src="Images/cod.png" alt="">
+                            </div>
+
+                            <div class="paymentText">
+                                <h2>Cash on Delivery</h2>
+                                <p>Pay when the item arrives</p>
+                            </div>
+
+                        </div>
+                        <div class="gcash">
+
+                            <input type="radio" name="payment" value="gcash">
+
+                            <div class="gcashImg">
+                                <img src="Images/gcash.png" alt="">
+                            </div>
+
+                            <div class="paymentText">
+                                <h2>GCash</h2>
+                                <p>Pay using your GCash wallet</p>
+                            </div>
+
+                        </div>
+                        <div class="paypal">
+
+                            <input type="radio" name="payment" value="paypal">
+
+                            <div class="paypalImg">
+                                <img src="Images/paypal.png" alt="">
+                            </div>
+
+                            <div class="paymentText">
+                                <h2>Paypal</h2>
+                                <p>Pay using your PayPal account</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <aside>
+            <div class="main-orderSummary">
+                <a href="cart.html" class="backBtn">Back to Cart</a>
+                <div class="order-summary-container">
+                    <h2>Order Summary</h2>
+                    <p id="cartSummary" style="margin-top:10px;" class="cartSummary"></p>
+    
+                    <div class="summary-row">
+                        <span style="font-size: 14px; color: #646464;">Subtotal</span>
+                        <span>$<span id="subtotal">0.00</span></span>
+                    </div>
+    
+                    <div class="summary-row">
+                        <span style="font-size: 14px; color: #646464;">Delivery Fee</span>
+                        <span>$<span id="delivery">0.00</span></span>
+                    </div>
+    
+                    <hr>
+    
+                    <div class="summary-row total">
+                        <span style="font-size: 16px;">Total</span>
+                        <span>$<span id="cartTotal">0.00</span></span>
+                    </div>
+    
+                     <button type="submit" id="placeOrderBtn" class="orderBtn">Place Order</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <p>© 2025 organic. All rights reserved.</p>
+        <p>Demo payment methods: GCash & PayPal (No actual transactions)</p>
+    </footer>
+</main>
+
+</body>
+</html>

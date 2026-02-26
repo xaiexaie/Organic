@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design/orderconfirm.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" href="Images/organ.png">
+    <title>organic - Order Confirmation</title>
+    <style>
+        #orderSuccess { display: none; color: green; margin-top: 10px; }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <div class="left-section">
+            
+            <img src="Images/organ.png" class="logo">
+
+            <span class="brand">organic</span>
+        </div>
+    </header>
+    <article>
+        <div>
+            <div class="main-order-confirmed">
+
+                <div class="inside-order-confirmed">
+
+                    <div class="img-container">
+
+                        <img src="Images/check.png" alt="">
+
+                    </div>
+
+                    <div class="text-container">
+
+                        <h2>Order Confirmed!</h2>
+
+                        <p>Thank you for your order. Your order number is:</p>
+
+                        <div id="orderNumber" class="orderNumber"></div>
+
+                        <p>We'll send you a notification when your order is ready for delivery.</p>
+
+                        <!-- order details are shown below the confirmation card in the original design -->
+
+                        <button onclick="window.location.href='dashboard.html'">Continue Shopping</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Items and totals (rendered below the confirmation card) -->
+    <article style="max-width:720px;margin:16px auto;">
+        <div id="orderItemsContainer"></div>
+        <div id="orderTotalsContainer" style="margin-top:12px;font-weight:600;"></div>
+        <div id="orderShippingContainer" style="margin-top:12px;color:#555;font-size:14px;"></div>
+    </article>
+     <footer>
+        <p>© 2025 organic. All rights reserved.</p>
+        <p>Demo payment methods: GCash & PayPal (No actual transactions)</p>
+    </footer>
+</main>
+
+</body>
+</html>

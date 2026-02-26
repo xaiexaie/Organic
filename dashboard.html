@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>organic</title>
+  <link rel="icon" type="image/png" href="Images/organ.png">
+  <link rel="stylesheet" href="design/style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="left-section">
+      <img src="Images/organ.png" class="logo">
+      <span class="brand">organic</span>
+    </div>
+
+    <nav class="navlinks">
+      <div class="nav-item active" id="navHome">Home</div>
+      <div class="nav-item" id="navCart" style="position:relative;">
+        Cart
+        <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+      </div>
+      <div class="nav-item" id="navProfile">Profile</div>
+      <div class="nav-item" id="navAboutUs">About Us</div>
+      <div class="bell" id="bellWrap"><span></span>
+        <span>🔔</span>
+        <div class="count" id="notifCount" style="display:none;">1</div>
+
+        <div class="notif-dropdown" id="notifDropdown">
+          <div class="notif-head">Notifications</div>
+          <div class="notif-list" id="notifList">
+            <div class="notif-item" id="notif1">
+              <div class="notif-dot" id="notifDot1"></div>
+              <div class="notif-body">
+                <div class="notif-title">Welcome to organic</div>
+                <div class="notif-time" id="notifTime1"></div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #eee;padding:10px;text-align:center;">
+            <button id="logoutBtn"
+              style="background:none;border:none;color:#e74c3c;cursor:pointer;font-weight:600;font-size:14px;">Logout</button>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1>fruits & Vegetables delivered to your door</h1>
+        <p class="lead">Seasonal, organic, and hand-picked. Order now and get same-day delivery.</p>
+        <div class="hero-ctas">
+          <a href="#products" class="btn primary">Shop Now</a>
+          <a href="#about" class="btn outline">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="Images/organ.png" alt="fruit bundle">
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <h2 class="section-title">Popular Products</h2>
+      <div class="search-area">
+        <input id="searchInput" class="search-bar" type="search" placeholder="Search products..."
+          aria-label="Search products">
+        <div class="categories" style="margin-bottom:12px;">
+          <div class="cat-item active" data-cat="Fruits">Fruits</div>
+          <div class="cat-item" data-cat="Vegetables">Vegetables</div>
+        </div>
+        <div class="product-type" role="tablist" style="margin-top:12px;">
+          <div class="type-item active" data-type="individual">Individual</div>
+          <div class="type-item" data-type="bundle">Bundle</div>
+        </div>
+      </div>
+
+      <!--  product grids -->
+      <div id="productsArea">
+
+        <div class="category-section" data-cat="Fruits">
+          <div id="productsGrid" class="grid">
+            <article class="card" data-product="apple" data-price="70.00" data-name="Red Apple" data-img="apple.svg"
+              data-type="individual">
+              <img src="Images/Fruits/Apples.png" alt="Red Apple" class="card-img">
+              <h3 class="card-title">Red Apple</h3>
+              <p class="card-price">₱70.00 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Fresh, crisp & sweet</p>
+              <p class="card-stock">Stock: 100</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="banana" data-price="60.00" data-name="Banana" data-img="banana.svg"
+              data-type="individual">
+              <img src="Images/Fruits/banana.png" alt="Banana" class="card-img">
+              <h3 class="card-title">Banana</h3>
+              <p class="card-price">₱60.00/ lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Ripe & creamy</p>
+              <p class="card-stock">Stock: 150</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="pineapple" data-price="76.52" data-name="Pineapple"
+              data-img="Pineapple.svg" data-type="individual">
+              <img src="Images/Fruits/pineapple.png" alt="Pineapple" class="card-img">
+              <h3 class="card-title">Pineapple</h3>
+              <p class="card-price">₱76.52 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Tart & juicy</p>
+              <p class="card-stock">Stock: 80</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="plantain" data-price="48.64" data-name="Plantain"
+              data-img="plantain.svg" data-type="individual">
+              <img src="Images/Fruits/plantain.png" alt="Plantain" class="card-img">
+              <h3 class="card-title">Plantain</h3>
+              <p class="card-price">₱48.64 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Starchy & hearty</p>
+              <p class="card-stock">Stock: 120</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="watermelon" data-price="87.35" data-name="Watermelon"
+              data-img="watermelon.svg" data-type="individual">
+              <img src="Images/Fruits/watermelon.png" alt="Watermelon" class="card-img">
+              <h3 class="card-title">Watermelon</h3>
+              <p class="card-price">₱87.35 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Sweet & refreshing</p>
+              <p class="card-stock">Stock: 120</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="melon" data-price="109.16" data-name="Melon" data-img="melon.svg"
+              data-type="individual">
+              <img src="Images/Fruits/melon.png" alt="Melon" class="card-img">
+              <h3 class="card-title">Melon</h3>
+              <p class="card-price">₱109.16 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Smooth & aromatic</p>
+              <p class="card-stock">Stock: 120</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="Mangoe" data-price="86.85" data-name="Mangoe" data-img="Mangoe.svg"
+              data-type="individual">
+              <img src="Images/Fruits/mango.png" alt="Mangoe" class="card-img">
+              <h3 class="card-title">Mangoe</h3>
+              <p class="card-price">₱86.85 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Tropical & silky</p>
+              <p class="card-stock">Stock: 120</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="grapes" data-price="121.68" data-name="Grapes" data-img="grapes.svg"
+              data-type="individual">
+              <img src="Images/Fruits/grapes.png" alt="Grapes" class="card-img">
+              <h3 class="card-title">Grapes</h3>
+              <p class="card-price">₱121.68 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Sweet & juicy</p>
+              <p class="card-stock">Stock: 120</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="strawberry" data-price="400.00" data-name="Strawberry"
+              data-img="strawberry.svg" data-type="individual">
+              <img src="Images/Fruits/strawberry.png" alt="Strawberry" class="card-img">
+              <h3 class="card-title">Strawberry</h3>
+              <p class="card-price">₱400.00 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Fresh & vibrant red</p>
+              <p class="card-stock">Stock: 120</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="juicy-orange" data-price="60.00" data-name="Juicy Orange"
+              data-img="juicy-orange.svg" data-type="individual">
+              <img src="Images/Fruits/Juicy Orange.png" alt="Juicy Oranges" class="card-img">
+              <h3 class="card-title">Juicy Oranges</h3>
+              <p class="card-price">₱60.00 / lb</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Citrus & zesty</p>
+              <p class="card-stock">Stock: 120</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <!--  bundle cards -->
+            <article class="card" data-product="tropical-bundle" data-price="12.50" data-name="Tropical Bundle"
+              data-img="fruits.png" data-type="bundle">
+              <img src="Images/Fruits/tropical fruits.png" alt="Tropical Bundle" class="card-img">
+              <h3 class="card-title">Tropical Bundle</h3>
+              <p class="card-desc" style="font-size:13px;color:#666;margin:6px 0 0 0;">Mangoes, Bananas, and Pineapple
+              </p>
+              <ul style="font-size:12px;color:#666;margin:6px 0 0 16px;padding:0;line-height:1.6;">
+                <li>2x Mangoes</li>
+                <li>2 lbs Bananas</li>
+                <li>1 Pineapple</li>
+              </ul>
+              <p class="card-price" style="margin-top:8px;">$12.50 / bundle</p>
+              <p class="card-stock">Stock: 25</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="mixed-bundle" data-price="9.99" data-name="Mixed Fruits Bundle"
+              data-img="fruits.png" data-type="bundle">
+              <img src="Images/Fruits/mixed fruits.png" alt="Mixed Fruits Bundle" class="card-img">
+              <h3 class="card-title">Mixed Fruits Bundle</h3>
+              <p class="card-desc" style="font-size:13px;color:#666;margin:6px 0 0 0;">Apples, Bananas, and Oranges</p>
+              <ul style="font-size:12px;color:#666;margin:6px 0 0 16px;padding:0;line-height:1.6;">
+                <li>3x Apples</li>
+                <li>2 lbs Bananas</li>
+                <li>2x Oranges</li>
+              </ul>
+              <p class="card-price" style="margin-top:8px;">$9.99 / bundle</p>
+              <p class="card-stock">Stock: 18</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-section" data-cat="Vegetables" style="margin-top:22px;">
+          <div id="vegGrid" class="grid">
+            <article class="card" data-product="Cherry tomato" data-price="350.00" data-name="Cherry Tomato"
+              data-img="Images/Fruits/Cherry to" data-type="individual">
+              <img src="Images/Veges/Cherry tomatoes.webp" alt="Tomato" class="card-img">
+              <h3 class="card-title">Cherry Tomato</h3>
+              <p class="card-price">₱350.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Juicy and ripe</p>
+              <p class="card-stock">Stock: 200</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="carrot" data-price="150.00" data-name="Carrot"
+              data-img="Images/Fruits/carrot.png" data-type="individual">
+              <img src="Images/Veges/carrots.webp" alt="Carrot" class="card-img">
+              <h3 class="card-title">Carrot</h3>
+              <p class="card-price">₱150.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Crunchy and sweet</p>
+              <p class="card-stock">Stock: 300</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="Chinese cabbage" data-price="35.00" data-name="Chinese cabbage"
+              data-img="Images/Fruits/lettuce.png" data-type="individual">
+              <img src="Images/Veges/Chinese cabbage.webp" alt="Lettuce" class="card-img">
+              <h3 class="card-title">Chinese cabbage</h3>
+              <p class="card-price">₱35.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Fresh salad leaves</p>
+              <p class="card-stock">Stock: 150</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="Japanese pumpkin" data-price="250.00" data-name="Japanese pumpkin"
+              data-type="individual">
+              <img src="Images/Veges/Japanese pumpkin.webp" class="card-img">
+              <h3 class="card-title">Japanese pumpkin</h3>
+              <p class="card-price">₱250.00 / piece</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Soft and nutty</p>
+              <p class="card-stock">Stock: 140</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="Broccoli" data-price="200.00" data-name="Broccoli"
+              data-type="individual">
+              <img src="Images/Veges/cucumber.png" class="card-img">
+              <h3 class="card-title">Broccoli</h3>
+              <p class="card-price">₱200.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Green & healthy</p>
+              <p class="card-stock">Stock: 90</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="White cabbage" data-price="35.00" data-name="White cabbage"
+              data-type="individual">
+              <img src="Images/Veges/White cabbage.webp" class="card-img">
+              <h3 class="card-title">White cabbage</h3>
+              <p class="card-price">₱35.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Crisp & leafy</p>
+              <p class="card-stock">Stock: 100</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="Spring onion" data-price="130.00" data-name="Spring onion"
+              data-type="individual">
+              <img src="Images/Veges/Spring onion.webp" class="card-img">
+              <h3 class="card-title">Spring onion</h3>
+              <p class="card-price">₱130.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Fresh & crisp</p>
+              <p class="card-stock">Stock: 120</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="red onion" data-price="120.00" data-name="red onion"
+              data-type="individual">
+              <img src="Images/Veges/red onion.webp" class="card-img">
+              <h3 class="card-title">Red onion</h3>
+              <p class="card-price">₱120.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Juicy & ripe</p>
+              <p class="card-stock">Stock: 160</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="onion" data-price="130.00" data-name="Onion" data-type="individual">
+              <img src="Images/Veges/Onion.webp" class="card-img">
+              <h3 class="card-title">Onion</h3>
+              <p class="card-price">₱130.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Strong & flavorful</p>
+              <p class="card-stock">Stock: 180</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="Rettich" data-price="50.00" data-name="Rettich" data-type="individual">
+              <img src="Images/Veges/Rettich.webp" class="card-img">
+              <h3 class="card-title">Rettich</h3>
+              <p class="card-price">₱50.00 / kg</p>
+              <p class="card-desc" style="font-size:13px;color:#999;margin:4px 0 0 0;">Aromatic & bold</p>
+              <p class="card-stock">Stock: 200</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="vege-tropical-bundle" data-price="200.00"
+              data-name="Veggie Tropical Bundle" data-img="Images/Veges/vegeBundle1.webp" data-type="bundle">
+              <img src="Images/Veges/vegeBundle1.webp" alt="Veggie Tropical Bundle" class="card-img">
+              <h3 class="card-title">Veggie Tropical Bundle</h3>
+              <p class="card-desc" style="font-size:13px;color:#666;margin:6px 0 0 0;">
+                Cherry Tomato, Carrot, Broccoli
+              </p>
+              <ul style="font-size:12px;color:#666;margin:6px 0 0 16px;padding:0;line-height:1.6;">
+                <li>250g Cherry Tomato</li>
+                <li>500g Carrot</li>
+                <li>200g Broccoli</li>
+              </ul>
+              <p class="card-price" style="margin-top:8px;">₱500.00 / bundle</p>
+              <p class="card-stock">Stock: 25</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+
+            <article class="card" data-product="vege-mixed-bundle" data-price="180.00"
+              data-name="Mixed Vegetables Bundle" data-img="Images/Veges/vegeBundle2.jpeg" data-type="bundle">
+              <img src="Images/Veges/vegeBundle2.jpeg" alt="Mixed Vegetables Bundle" class="card-img">
+              <h3 class="card-title">Mixed Vegetables Bundle</h3>
+              <p class="card-desc" style="font-size:13px;color:#666;margin:6px 0 0 0;">
+                Chinese Cabbage, Japanese Pumpkin, White Cabbage, Onion
+              </p>
+              <ul style="font-size:12px;color:#666;margin:6px 0 0 16px;padding:0;line-height:1.6;">
+                <li>500g Chinese Cabbage</li>
+                <li>500g Japanese Pumpkin</li>
+                <li>400g White Cabbage</li>
+                <li>300g Onion</li>
+              </ul>
+              <p class="card-price" style="margin-top:8px;">₱1000.00 / bundle</p>
+              <p class="card-stock">Stock: 18</p>
+              <button class="btn add add-to-cart">Add to Cart</button>
+            </article>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+
+
+    <section id="about" class="about">
+      <h2 class="section-title">Why choose organic?</h2>
+      <p>We partner with local farms to bring you the freshest produce. Sustainable packaging and reliable delivery.</p>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 organic. All rights reserved.</p>
+        <p>Demo payment methods: GCash & PayPal (No actual transactions)</p>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

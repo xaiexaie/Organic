@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>organic - Login</title>
+<link rel="icon" type="image/png" href="Images/organ.png">
+<link rel="stylesheet" href="design/style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<main class="page-center">
+  <div class="auth-box">
+    <form id="loginForm" class="auth-form active">
+
+      <h2 class="title">organic</h2>
+      <p class="sub">Welcome back — please login to your account</p>
+
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="you@example.com">
+
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Password">
+
+      <div class="row between">
+        <span class="link small" id="goForgot">Forgot password?</span>
+      </div>
+
+      <button type="button" id="loginBtn" class="btn">Login</button>
+
+      <div class="divider"></div>
+
+      <p class="small muted">Don't have an account?
+        <span class="link" id="goSignup">Sign up</span>
+      </p>
+
+      <div id="loginNotification"></div>
+
+    </form>
+  </div>
+</main>
+
+</body>
+</html>
+

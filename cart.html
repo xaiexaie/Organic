@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>organic - Shopping Cart</title>
+<link rel="icon" type="image/png" href="Images/organ.png">
+<link rel="stylesheet" href="design/style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="left-section">
+    <img src="Images/organ.png" class="logo">
+    <span class="brand">organic</span>
+  </div>
+
+  <nav class="navlinks">
+    <div class="nav-item" id="navHome">Home</div>
+     <div class="nav-item active" id="navCart" style="position:relative;">
+       Cart
+       <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+     </div>
+    <div class="nav-item" id="navProfile">Profile</div>
+    <div class="nav-item" id="navAboutUs">About Us</div>
+    
+    <div class="bell" id="bellWrap">
+      <span>🔔</span>
+      <div class="count" id="notifCount">1</div>
+
+      <div class="notif-dropdown" id="notifDropdown">
+        <div class="notif-head">Notifications</div>
+        <div class="notif-list" id="notifList">
+          <div class="notif-item" id="notif1">
+            <div class="notif-dot" id="notifDot1"></div>
+            <div class="notif-body">
+              <div class="notif-title">Welcome to organic</div>
+              <div class="notif-time" id="notifTime1"></div>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #eee;padding:10px;text-align:center;">
+          <button id="logoutBtn" style="background:none;border:none;color:#e74c3c;cursor:pointer;font-weight:600;font-size:14px;">Logout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- CART CONTENT -->
+<main class="container">
+  <section class="cart-wrapper">
+    <h1 class="cart-title">Shopping Cart</h1>
+    <div class="cart-items" id="cartSummary">0 items</div>
+
+    <div id="cartDisplay">
+      <div class="empty-box">
+        <div class="empty-emoji">🛍️</div>
+        <div class="empty-text">Your cart is empty</div>
+      </div>
+    </div>
+
+    <div id="cartTable" style="display:none;margin-top:20px;">
+      <div style="background:#fff;border-radius:8px;padding:8px;margin-bottom:20px;">
+        <div id="cartBody" style="min-height:100px;"></div>
+      </div>
+
+      <!-- Order Summary -->
+      <div style="background:#fff;border-radius:8px;padding:20px;margin-top:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+        <h3 style="margin:0 0 16px 0;font-size:18px;">Order Summary</h3>
+        <div style="display:flex;justify-content:space-between;margin-bottom:12px;font-size:14px;">
+          <span>Subtotal</span>
+          <span style="font-weight:600;">$<span id="subtotal">0.00</span></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:16px;font-size:14px;border-bottom:1px solid #eee;padding-bottom:16px;">
+          <span>Delivery Fee</span>
+          <span style="font-weight:600;">$<span id="delivery">5.00</span></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:18px;font-weight:700;">
+          <span>Total</span>
+          <span>$<span id="cartTotal">0.00</span></span>
+        </div>
+        <button id="checkoutBtn" onclick="handleCheckoutClick()" class="btn primary" style="width:100%;margin-top:16px;padding:12px;">Proceed to Checkout</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 organic. All rights reserved.</p>
+      <p>Demo payment methods: GCash & PayPal (No actual transactions)</p>
+    </div>
+  </footer>
+</main>

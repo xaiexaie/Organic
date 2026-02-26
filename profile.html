@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>organic - Profile</title>
+<link rel="icon" type="image/png" href="Images/organ.png">
+<link rel="stylesheet" href="design/style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="left-section">
+    <img src="Images/organ.png" class="logo">
+    <span class="brand">organic</span>
+  </div>
+
+  <nav class="navlinks">
+    <div class="nav-item" id="navHome">Home</div>
+     <div class="nav-item" id="navCart" style="position:relative;">
+       Cart
+       <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+     </div>
+    <div class="nav-item active" id="navProfile">Profile</div>
+    <div class="nav-item" id="navAboutUs">About Us</div>
+
+    <div class="bell" id="bellWrap">
+      <span>🔔</span>
+      <div class="count" id="notifCount">1</div>
+
+      <div class="notif-dropdown" id="notifDropdown">
+        <div class="notif-head">Notifications</div>
+        <div class="notif-list" id="notifList">
+          <div class="notif-item" id="notif1">
+            <div class="notif-dot" id="notifDot1"></div>
+            <div class="notif-body">
+              <div class="notif-title">Welcome to Fruit Market</div>
+              <div class="notif-time" id="notifTime1"></div>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #eee;padding:10px;text-align:center;">
+          <button id="logoutBtn" style="background:none;border:none;color:#e74c3c;cursor:pointer;font-weight:600;font-size:14px;">Logout</button>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+</header>
+
+<main class="container">
+  <section class="profile-wrapper">
+    <div class="profile-header">
+      <div class="profile-avatar">👤</div>
+      <div class="profile-info">
+        <h1 id="profileName"></h1>
+        <p id="profileEmail"></p>
+      </div>
+      <button id="editProfileBtn" class="btn primary">Edit Profile</button>
+      <div id="loginPromptContainer" style="display:none;">
+        <a href="login.html" class="btn primary" style="text-decoration:none;">Log In</a>
+      </div>
+    </div>
+
+    <div id="editProfileForm" class="profile-form" style="display:none;">
+      <h2>Edit Profile</h2>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="editName" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="editEmail" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" id="editPhone" placeholder="Phone number">
+      </div>
+      <div class="form-group">
+        <label>Delivery Address</label>
+        <input type="text" id="editAddress" placeholder="Your address">
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button id="saveProfileBtn" class="btn primary">Save Changes</button>
+        <button id="cancelEditBtn" class="btn outline">Cancel</button>
+      </div>
+    </div>
+
+    <section class="profile-section" id="accountInfoSection">
+      <h2>Account Information</h2>
+      <div id="accountInfoPlaceholder" style="display:none;padding:20px;background:#f9fafb;border-radius:8px;text-align:center;">
+        <p style="color:#6b7280;margin-bottom:12px;">Log in to see your account information</p>
+        <a href="login.html" class="link" style="text-decoration:none;">Log in to your account</a>
+      </div>
+      <div class="info-grid" id="accountInfoGrid">
+        <div class="info-item">
+          <label>Phone</label>
+          <p id="profilePhone">Not provided</p>
+        </div>
+        <div class="info-item">
+          <label>Delivery Address</label>
+          <p id="profileAddress">Not provided</p>
+        </div>
+        <div class="info-item">
+          <label>Member Since</label>
+          <p id="profileJoined">Not available</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="profile-section">
+      <h2>Order History</h2>
+      <div id="orderHistory">
+        <p style="color:#6b7280;">No orders yet. <a href="dashboard.html" style="color:#10b981;cursor:pointer;">Start shopping</a></p>
+      </div>
+    </section>
+
+    <section class="profile-section" id="settingsSection" style="display:none;">
+      <h2>Settings</h2>
+      <div class="settings-card">
+        <div class="setting-item">
+          <div>
+            <p style="font-weight:600;">Notifications</p>
+            <p style="font-size:14px;color:#6b7280;">Receive order updates and promotions</p>
+          </div>
+          <input type="checkbox" id="notifToggle" checked>
+        </div>
+
+        <div class="setting-item">
+          <div>
+            <p style="font-weight:600;">Newsletter</p>
+            <p style="font-size:14px;color:#6b7280;">Weekly deals and new products</p>
+          </div>
+          <input type="checkbox" id="newsletterToggle">
+        </div>
+
+        <div id="deactivateRow" class="setting-item deactivate-row" role="button" tabindex="0">
+          <div>
+            <p class="deact-title">Deactivate account</p>
+            <p class="deact-desc">Temporarily deactivate your account if you want to take a short break.</p>
+          </div>
+        </div>
+
+        <div class="delete-card">
+          <button id="deleteAccountBtn" class="btn-delete">Delete Account</button>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- Delete / Deactivate Modal -->
+  <div id="deleteModal" class="modal-backdrop" style="display:none;">
+    <div class="modal-card">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <h2 class="modal-title">Deactivating or deleting your account</h2>
+      <p class="modal-desc">If you want to take a break from Fruit Market, you can temporarily deactivate this account. If you want to permanently delete your account, let us know.</p>
+
+      <div class="modal-options">
+        <div id="deactivateOption" class="modal-option">
+          <div style="flex:1;">
+            <div class="option-title">Deactivate account</div>
+            <div class="option-desc">Deactivating your account is temporary. Your account and main profile will be hidden. You'll be able to continue using Fruit Market.</div>
+          </div>
+          <div class="radio-custom" aria-hidden>
+            <div class="dot"></div>
+            <input type="radio" name="deleteOption" id="deactivateRadio" style="display:none;">
+          </div>
+        </div>
+
+        <div id="deleteOption" class="modal-option">
+          <div style="flex:1;">
+            <div class="option-title">Delete account</div>
+            <div class="option-desc">Deleting your account is permanent. Your profile and everything else you've added will be permanently deleted.</div>
+          </div>
+          <div class="radio-custom" aria-hidden>
+            <div class="dot"></div>
+            <input type="radio" name="deleteOption" id="deleteRadio" style="display:none;">
+          </div>
+        </div>
+      </div>
+
+      <button id="confirmDeleteBtn" class="btn-modal-primary">Continue</button>
+      <button id="cancelDeleteBtn" class="btn-modal-outline">Cancel</button>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2025 organic. All rights reserved.</p>
+    <p>Demo payment methods: GCash & PayPal (No actual transactions)</p>
+  </div>
+</footer>
+
+</body>
+</html>
